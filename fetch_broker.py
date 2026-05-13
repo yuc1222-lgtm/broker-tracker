@@ -80,7 +80,7 @@ def save_to_csv(date_str, buy_rows, sell_rows):
                 "買進金額": parse_number(row[1]),
                 "賣出金額": parse_number(row[2]),
                 "差額": diff,
-                "單位億元": round(diff / 1e8, 2)
+                "單位億元": round(diff / 1e5, 2)
             })
 
         for row in sell_rows:
@@ -92,7 +92,7 @@ def save_to_csv(date_str, buy_rows, sell_rows):
                 "買進金額": parse_number(row[1]),
                 "賣出金額": parse_number(row[2]),
                 "差額": diff,
-                "單位億元": round(abs(diff) / 1e8, 2)
+                "單位億元": round(abs(diff) / 1e5, 2)
             })
 
     print(f"寫入完成：{date_str}，買超 {len(buy_rows)} 筆，賣超 {len(sell_rows)} 筆")
