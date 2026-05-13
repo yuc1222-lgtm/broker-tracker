@@ -5,6 +5,9 @@ on:
     - cron: '30 8 * * 1-5'  # 台灣時間 16:30，週一到週五
   workflow_dispatch:  # 允許手動觸發
 
+permissions:
+  contents: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
